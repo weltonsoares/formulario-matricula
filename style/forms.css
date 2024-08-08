@@ -1,0 +1,83 @@
+form {
+    margin-top: 3rem;
+
+}
+
+legend {
+    font: var(--text-heading4);
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+fieldset {
+    border: none;
+    display: grid;
+    gap: 1.5rem;
+}
+
+/* Essa declaração aplicasse quando uma TAG é anterior a outra */
+fieldset + fieldset {
+    margin-top: 3rem;
+}
+
+/* Essa declaração aplica GAG em todas as classes FLEX dentro da class EDDRESS */
+.eddress .flex {
+    gap: 1.25rem;
+}
+
+input {
+    /* Essa declaração é pra quando o input conter um disabled */
+    &[disabled] {
+        background-color: var(--surface-disabled);
+        border: var(--stroke-default);
+        color: var(--text-primary);
+    }
+
+    /* Essa declaração será aplicada quando um campo com REQUIRED estiver vazia */
+    &:invalid {
+        border: .125rem solid var(--semantic-error);
+    }
+
+    /* Essa declaração será aplicada quando um input tiver um small como irmão */
+    & + small {
+        font: var(--text-sm);
+        color: #78716C;
+        display: inline-block;
+        margin-top: .25rem;
+    }
+
+    /* Essa declaração é pra quando houver um input com requires e o mesmo tiver um irmão error */
+    &[required] + .error {
+        display: flex;
+        align-items: center;
+        gap: .25rem;
+        margin-top: .25rem;
+        color: var(--semantic-error);
+        font: var(--text-sm);
+    }
+    
+    /* Essa declaração é pra quando o e-mail for preenchido o erro desapareça */
+    &:not(:focus):valid + .error {
+        display: none;
+    }
+
+}
+
+.input-wrapper:has([disabled]) {
+    opacity: .5;
+}
+
+.gardian {
+    margin-bottom: 3rem;
+}
+
+.input-sport {
+    margin-top: 1.5rem;
+}
+
+.actions-wrapper {
+    display: flex;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-top: 1rem;
+}
